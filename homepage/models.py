@@ -5,7 +5,6 @@ class Student(models.Model):
     address = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
     email_address = models.CharField(max_length=100)
-    student_number = models.AutoField()
     average_mark = models.CharField(max_length=1)
 
 class Seminar(models.Model):
@@ -15,7 +14,7 @@ class Seminar(models.Model):
     professor = models.ForeignKey('Professor')
 
 class Enrollment(models.Model):
-    marks_received = models.CharField()
+    marks_received = models.CharField(max_length=50)
     student = models.ForeignKey('Student')
     seminar = models.ForeignKey('Seminar')
 
