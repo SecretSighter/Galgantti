@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 9
-_modified_time = 1420646954.745813
+_modified_time = 1420687020.2660937
 _enable_loop = True
 _template_filename = '/home/doug/Projects/test_dmp/homepage/templates/index.html'
 _template_uri = 'index.html'
@@ -30,6 +30,7 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def content():
             return render_content(context._locals(__M_locals))
+        now = context.get('now', UNDEFINED)
         __M_writer = context.writer()
         # SOURCE LINE 1
         __M_writer('\n\n')
@@ -47,9 +48,13 @@ def render_content(context,**pageargs):
     try:
         def content():
             return render_content(context)
+        now = context.get('now', UNDEFINED)
         __M_writer = context.writer()
         # SOURCE LINE 3
-        __M_writer('\n    <div class="content">\n      <h3>Congratulations -- you\'ve successfully created a new django-mako-plus app!</h3>\n      <h4>Next Up: Go through the django-mako-plus tutorial and add Javascript, CSS, and urlparams to this page.</h4>\n    </div>\n')
+        __M_writer('\n    <div class="content">\n      <h3>Congratulations -- you\'ve successfully created a new django-mako-plus app!</h3>\n      <h4>Next Up: Go through the django-mako-plus tutorial and add Javascript, CSS, and urlparams to this page.</h4>\n      <p class="server-time">The current server time is ')
+        # SOURCE LINE 7
+        __M_writer(str( now ))
+        __M_writer('.</p>\n      <p class="browser-time">The current browser time is...</p>\n    </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
