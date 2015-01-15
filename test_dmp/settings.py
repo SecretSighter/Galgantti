@@ -62,9 +62,9 @@ WSGI_APPLICATION = 'test_dmp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.path.join(BASE_DIR, 'db.psycopg2'),
-        'USER':'',
-        'PASSWORD':'',
+        'NAME': 'is542',
+        'USER':'postgres',
+        'PASSWORD':'master',
         'HOST':'127.0.0.1',
         'PORT':'5432',
     }
