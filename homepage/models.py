@@ -23,5 +23,5 @@ class Seminar(models.Model):
     name = models.TextField(max_length=50)
     seminar_number = models.IntegerField()
     fees = models.DecimalField(max_digits=6, decimal_places=2)
-    professor = models.ForeignKey('Professor')
+    professor = models.ForeignKey('Professor', null=False)
     student_on_waiting_list = models.ManyToManyField(Student)
