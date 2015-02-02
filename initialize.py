@@ -83,21 +83,21 @@ for student in students:
 
 print('\n\nSeminar: \n')
 
-# try:
-oneSeminar = hmod.Seminar.objects.get(seminar_number=2)
+try:
+    oneSeminar = hmod.Seminar.objects.get(seminar_number=2)
 
-print('Seminar of number ' + str(oneSeminar.seminar_number) + ' taught by ' + oneSeminar.professor.name + ' has a name of ' + oneSeminar.name + ' with fees of $' + str(oneSeminar.fees) + '.')
+    print('Seminar of number ' + str(oneSeminar.seminar_number) + ' taught by ' + oneSeminar.professor.name + ' has a name of ' + oneSeminar.name + ' with fees of $' + str(oneSeminar.fees) + '.')
 
-enrollments = oneSeminar.enrollment_set.all()
-for enrollment in enrollments:
-    print (enrollment.student.name + ' received a mark of ' + enrollment.marks_received)
+    enrollments = oneSeminar.enrollment_set.all()
+    for enrollment in enrollments:
+        print (enrollment.student.name + ' received a mark of ' + enrollment.marks_received)
 
-    students_on_waiting_list = oneSeminar.student_on_waiting_list.all()
-for student in students_on_waiting_list:
-    print('Student of name ' + student.name + ' is on the waiting list')
+        students_on_waiting_list = oneSeminar.student_on_waiting_list.all()
+    for student in students_on_waiting_list:
+        print('Student of name ' + student.name + ' is on the waiting list')
 
-# except Exception:
-#     print('Unable To Find Seminar')
+except Exception:
+    print('Unable To Find Seminar')
 
 
 averageFee = hmod.Seminar.objects.filter(fees__gt=0).aggregate(Avg('fees'))
@@ -111,7 +111,6 @@ seminarsWithoutTeachers = hmod.Seminar.objects.filter(professor__isnull=True)
 print('\n\nSeminars without teachers: \n')
 for seminar in seminarsWithoutTeachers:
     print(seminar.name)
-
 
 studentsInProvo = hmod.Student.objects.filter(address__contains='Provo')
 print('\n\nStudents in Provo: \n')

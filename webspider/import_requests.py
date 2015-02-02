@@ -16,7 +16,7 @@ dictionaryOfWeblinks = {}
 listOfWeblinks = []
 litigationReGex = '\/litigation/.+.htm'
 
-# Retreive base website
+# Retrieve base website
 r = requests.get(govWebsite['url'])
 govWebsite['html'] = r.text
 
