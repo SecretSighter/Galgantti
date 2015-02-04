@@ -1,5 +1,5 @@
 """
-Django settings for test_dmp project.
+Django settings for galgantti project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -51,9 +51,9 @@ MIDDLEWARE_CLASSES = (
     'django_mako_plus.controller.router.RequestInitMiddleware',
 )
 
-ROOT_URLCONF = 'test_dmp.urls'
+ROOT_URLCONF = 'galgantti.urls'
 
-WSGI_APPLICATION = 'test_dmp.wsgi.application'
+WSGI_APPLICATION = 'galgantti.wsgi.application'
 
 
 # Database

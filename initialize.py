@@ -3,7 +3,7 @@ import os
 
 # initialize the django environment
 # assumes ./proj/settings.py is your settings file, relative to current dir
-os.environ['DJANGO_SETTINGS_MODULE'] = 'test_dmp.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'galgantti.settings'
 import django
 from django.db.models import Avg
 django.setup()
