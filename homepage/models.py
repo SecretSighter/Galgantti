@@ -1,5 +1,10 @@
 from django.db import models
 
+class BaseModel(models.Model):
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+    is_deleted = models.BooleanField(default=False)
+
 class Student(models.Model):
     name = models.TextField(max_length=50)
     address = models.TextField(max_length=100)
@@ -7,10 +12,10 @@ class Student(models.Model):
     email_address = models.TextField(max_length=100)
     average_mark = models.TextField(max_length=1)
 
-class Enrollment(models.Model):
-    marks_received = models.TextField(max_length=50)
-    student = models.ForeignKey('Student')
-    seminar = models.ForeignKey('Seminar')
+class Task(models.Model):
+    parent_task = models.ForeignKey('Task')
+    # user_id = models.ForeignKey()
+    name = models.TextField(max_length=100)
 
 class Professor(models.Model):
     name = models.TextField(max_length=50)

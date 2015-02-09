@@ -9,22 +9,24 @@
   <meta charset="UTF-8">
   <head>
     
-    <title>homepage</title>
+    <%block name="title">
+      <title>Homepage</title>
+    </%block>
     
     ## add any site-wide scripts or CSS here; for example, jquery:
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-- >
   
-    ## render the css with the same name as this page
+    <!-- ## render the css with the same name as this page -->
     ${ static_renderer.get_template_css(request, context)  }
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    ## <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    ## <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> -->
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    ## <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
   
   </head>
   <body>
@@ -38,15 +40,6 @@
           <a><li>Fourth</li></a>
           <a><li>Fifth</li></a>
         </ul>
-
-        <script>
-          $(function() {
-            $("ul.tab-bar > a").click(function() {
-              $(this).siblings('.tab-active').removeClass('tab-active');
-              $(this).addClass('tab-active');
-            });
-          });
-        </script>
       </%block>
     </header>
 
