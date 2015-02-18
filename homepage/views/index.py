@@ -10,4 +10,5 @@ def process_request(request):
 	template_vars = {
 		'now': datetime.now(),
 	}
+
 	return templater.render_to_response(request, 'index.html', template_vars)

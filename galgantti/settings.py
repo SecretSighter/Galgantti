@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_mako_plus.controller.router.RequestInitMiddleware',
+    'lib.middleware.WebGuidMiddleware',
 )
 
 ROOT_URLCONF = 'galgantti.urls'

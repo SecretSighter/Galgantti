@@ -2,3 +2,5 @@
 */cached_templates/*
 homepage/cached_templates/*
 .idea/*
+node_modules/*
+*/templates/*

@@ -1,152 +1,105 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
-
-header{
-    padding-top: .5em;
-    padding-left: .5em;
-}
-
-.clear{
-	clear: both;
-}
-
-.logo{
-	display: inline-block;
-}
-.logo img{
-	height: 50px;
-}
-
-.tab-bar{
-	display: inline-block;
-	float: right;
-}
-.tab-bar li{
-	padding: 2px;
-	background-color: orange;
-	float: left;
-	list-style: none;
-}
-.message_container{
-	position: absolute;
-	right: 5px;
-}
-
-footer{
-    background-color: green;
-    display: block;
-}
-
-/**
- * Thanks to http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/ for this trick below
+/*
+ * Base structure
  */
-/* BE SURE TO INCLUDE THE CSS RESET FOUND IN THE DEMO PAGE'S CSS */
 
-/*------------------------------------*\
-    NAV
-\*------------------------------------*/
-#nav{
-    list-style:none;
-    font-weight:bold;
-    margin-bottom:10px;
-    float:right; /* Clear floats */
-    width:100%;
-    /* Bring the nav above everything else--uncomment if needed.
-    position:relative;
-    z-index:5;
-    */
-}
-#nav li{
-    float:right;
-    margin-right:10px;
-    position:relative;
-}
-#nav a{
-    display:block;
-    padding:5px;
-    color:#fff;
-    background:#333;
-    text-decoration:none;
-}
-#nav a:hover{
-    color:#fff;
-    background:#6b0c36;
-    text-decoration:underline;
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
 }
 
-/*--- DROPDOWN ---*/
-#nav ul{
-    background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
-    background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
-    list-style:none;
-    position:absolute;
-    left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
-}
-#nav ul li{
-    padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
-    float:none;
-}
-#nav ul a{
-    white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
-}
-#nav li:hover ul{ /* Display the dropdown on hover */
-    left:0; /* Bring back on-screen when needed */
-}
-#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-    background:#6b0c36;
-    text-decoration:underline;
-}
-#nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
-    text-decoration:none;
-}
-#nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-    background:#333;
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-#nav2{
-	padding: 2em;
-	background-color: grey;
-	min-width: 250px;
-	width: 250px;
-	float: left;
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
 }
 
-#nav2Hidden{
-	width: 314px;
-	float:left;
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
 }
 
-.main_content{
-	background-color: red;
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
 }
-.right-content{
-	float: left;
-	background-color: orange;
-	width: 250px;
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
 }
 
-@media all and (min-width: 480px) {
-    header{
-    	padding-left: 1em;
-    	padding-top: 1em;
-    }	
-    #nav2{
-    	vertical-align: top;
-    	float: left;
-    }
-    .main_content{
-    	max-width: 61%;
-		float: left;
-    }
 
-    .fixed{
-    	position: fixed;
-    	top: 0px;
-    	left: 0px;
-    }
-    .unHide{
-    	height: 5px;
-    }
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
 }
