@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> 
 
     ## Latest compiled and minified JavaScript 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/static/homepage/scripts/docs.min.js"></script>
   
   </head>
   <body>
@@ -303,7 +304,6 @@
             </div>
           </div>
         </div>
-        <div>
       </%block>
     </main>
 
@@ -312,18 +312,6 @@
         Copyright ${ datetime.datetime.now().strftime("%b-%Y") } Galgantti Confederation
       </%block>
     </footer>
-
-    <script>
-      (document.onscroll = function(){
-        if(window.scrollY > 108){
-          document.getElementById("nav2").className = 'fixed';
-          document.getElementById("nav2Hidden").className = 'unHide';
-        } else {
-          document.getElementById("nav2").className = 'not-fixed';
-          document.getElementById("nav2Hidden").className = 'hidden';
-        }
-      })();
-    </script>
 
     ## render the JS with the same name as this page
     ${ static_renderer.get_template_js(request, context)  }
