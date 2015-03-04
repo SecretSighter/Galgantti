@@ -20,6 +20,8 @@
 	position: relative;
 	padding: 15px;
 	text-align: center;
+	width: 225px;
+	left: -35px;
 }
 .fixed{
 	height: 160px;
@@ -31,6 +33,8 @@
 	position: absolute !important;
 	z-index: 50;
 	display: inline !important;
+	box-shadow: 1pt 1pt 1pt black;
+	border-radius: 5px;
 }
 .extraHeight{
 	margin-top: 30px;

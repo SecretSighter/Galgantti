@@ -5,6 +5,12 @@ class BaseModel(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     is_deleted = models.BooleanField(default=False)
 
+class Picture(BaseModel):
+    filename = models.TextField(max_length=100)
+    size = models.IntegerField()
+    mime_type = models.TextField(max_length=100)
+    title = models.TextField(max_length=100)
+
 class Priority(BaseModel):
     name = models.TextField(max_length=40)
     order = models.IntegerField()
