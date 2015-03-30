@@ -37,13 +37,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mako_plus.controller',
-    'homepage',
+    'base_app',
+    'projects',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -126,7 +127,7 @@ LOGGING = {
 # define any additional search directories here - this allows inheritance between apps
 # absolute paths are suggested
 DMP_TEMPLATES_DIRS = [ 
-# os.path.join(BASE_DIR, 'base_app', 'templates'),
+    os.path.join(BASE_DIR, 'base_app', 'templates'),
 ]
 
 # identifies where the Mako template cache will be stored, relative to each app
@@ -134,7 +135,7 @@ DMP_TEMPLATES_CACHE_DIR = 'cached_templates'
 
 # the default app and page to render in Mako when the url is too short
 DMP_DEFAULT_PAGE = 'index'  
-DMP_DEFAULT_APP = 'homepage'
+DMP_DEFAULT_APP = 'projects'
 
 # these are included in every template by default - if you put your most-used libraries here, you won't have to import them exlicitly in templates
 DMP_DEFAULT_TEMPLATE_IMPORTS = [

@@ -1,5 +1,13 @@
 from django.db import models
 
+class MyUser(models.Model):
+    first_name = models.TextField(max_length=100)
+    last_name = models.TextField(max_length=100)
+    salary = models.IntegerField()
+
+    def get_full_name(self):
+        return self.first_name + ' ' + self.last_name
+
 class BaseModel(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
@@ -10,6 +18,11 @@ class Picture(BaseModel):
     size = models.IntegerField()
     mime_type = models.TextField(max_length=100)
     title = models.TextField(max_length=100)
+
+class File(BaseModel):
+    filename = models.TextField(max_length=100)
+    guid = models.IntegerField(max_length=100)
+    location = models.TextField(max_length=100)
 
 class Priority(BaseModel):
     name = models.TextField(max_length=40)
