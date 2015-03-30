@@ -1,0 +1,18 @@
+<%inherit file="base.htm" />
+
+<%block name="main_center_content">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <div class="container">
+    	<div class="row">
+		    <h1>Upload a file!</h1>
+    	</div>
+    	<div class="row">
+	    	<form method="POST">
+		    	<table class="table">
+			    	${form}
+		    	</table>
+				<input type="submit" class='btn btn-default' />
+	    	</form>
+    	</div>
+    </div>
+</%block>
